@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="line_separator">#e9ecf6</color>
+
+    <color name="dashboard_title_text">#cad1e3</color>
+    <color name="dashboard_weather_info_label">#cad1e3</color>
+    <color name="dashboard_country_text">#38446a</color>
+    <color name="dashboard_bottom_sheet_color">#5c1aed</color>
+    <color name="dashboard_bottom_sheet_overlay_color">#632ff2</color>
+    <color name="dashboard_weather_detail_value">#FFFFFFFF</color>
+
+    <color name="ripple_effect">#632ff2</color>
+    <color name="bg_change_city_card">#5c1aed</color>
+    <color name="primary_text">#5c1aed</color>
+    <color name="secondary_text">#cad1e3</color>
+</resources>

@@ -1,0 +1,77 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+//    id 'dagger.hilt.android.plugin'
+    id 'kotlin-kapt'
+}
+
+android {
+
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdk globalConfiguration.getAt("androidCompileSdkVersion")
+
+    defaultConfig {
+        minSdk globalConfiguration.getAt("androidMinSdkVersion")
+        targetSdk globalConfiguration.getAt("androidTargetSdkVersion")
+
+        testInstrumentationRunner globalConfiguration.getAt("testInstrumentationRunner")
+        consumerProguardFiles globalConfiguration.getAt("consumerRulesPro")
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile(globalConfiguration.getAt("proguardAndroidOptimize")), globalConfiguration.getAt("proguardRulesPro")
+        }
+    }
+    compileOptions {
+        sourceCompatibility globalConfiguration.getAt("javaVersion")
+        targetCompatibility globalConfiguration.getAt("javaVersion")
+    }
+    kotlinOptions {
+        jvmTarget = globalConfiguration.getAt("jvmTarget")
+    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+}
+
+dependencies {
+
+    def domainDependencies = rootProject.ext.domainDependencies
+    def domainTestDependencies = rootProject.ext.domainTestDependencies
+
+    implementation domainDependencies.kotlinStdLib
+    implementation domainDependencies.rxKotlin
+    implementation domainDependencies.rxAndroid
+    implementation domainDependencies.kotlinCoroutinesCore
+    implementation domainDependencies.kotlinCoroutinesAndroid
+    implementation domainDependencies.timber
+    implementation domainDependencies.retrofit2
+    implementation domainDependencies.retrofit2ConverterGson
+    implementation domainDependencies.retrofit2Coroutines
+    implementation domainDependencies.googleGson
+    implementation domainDependencies.okHttp
+    implementation domainDependencies.okHttpLogging
+
+    // Dagger
+    implementation domainDependencies.dagger
+    kapt domainDependencies.daggerCompiler
+
+    // Dagger - Hilt
+//    implementation domainDependencies.daggerHiltAndroid
+//    kapt domainDependencies.hiltAndroidCompiler
+//    kapt domainDependencies.hiltCompiler
+
+    // Test
+    implementation domainTestDependencies.junit
+    implementation domainTestDependencies.mockito
+    implementation domainTestDependencies.assertj
+}

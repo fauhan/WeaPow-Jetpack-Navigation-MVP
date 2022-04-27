@@ -1,0 +1,109 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+//    id 'dagger.hilt.android.plugin'
+    id 'kotlin-kapt'
+}
+
+android {
+
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdk globalConfiguration.getAt("androidCompileSdkVersion")
+
+    defaultConfig {
+        applicationId globalConfiguration.getAt("androidApplicationId")
+        minSdk globalConfiguration.getAt("androidMinSdkVersion")
+        targetSdk globalConfiguration.getAt("androidTargetSdkVersion")
+        versionCode globalConfiguration.getAt("androidVersionCode")
+        versionName globalConfiguration.getAt("androidVersionName")
+
+        testInstrumentationRunner globalConfiguration.getAt("testInstrumentationRunner")
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile(globalConfiguration.getAt("proguardAndroidOptimize")), globalConfiguration.getAt("proguardRulesPro")
+        }
+    }
+    compileOptions {
+        sourceCompatibility globalConfiguration.getAt("javaVersion")
+        targetCompatibility globalConfiguration.getAt("javaVersion")
+    }
+    kotlinOptions {
+        jvmTarget = globalConfiguration.getAt("jvmTarget")
+    }
+    viewBinding {
+        enabled = globalConfiguration.getAt("viewBinding")
+    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+
+}
+
+dependencies {
+    def appDependencies = rootProject.ext.appDependencies
+
+    implementation project(":domain")
+    implementation project(":data")
+
+    implementation appDependencies.coreKtx
+    implementation appDependencies.appCompat
+    implementation appDependencies.multidex
+    implementation appDependencies.googleMaterial
+    implementation appDependencies.constraintLayout
+    implementation appDependencies.recyclerView
+
+    // Jetpack Navigation
+    implementation appDependencies.navFragmentKtx
+    implementation appDependencies.navUIKtx
+    implementation appDependencies.navDynamicFragment
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    // Dagger
+    implementation appDependencies.dagger
+    kapt appDependencies.daggerCompiler
+
+    // Glide
+    implementation appDependencies.glide
+    kapt appDependencies.glideCompiler
+
+    //Dagger - Hilt
+//    implementation appDependencies.daggerHiltAndroid
+//    kapt appDependencies.hiltAndroidCompiler
+//    kapt appDependencies.hiltCompiler
+//    kaptAndroidTest appDependencies.hiltAndroidCompiler
+
+    // retrofit
+    implementation appDependencies.retrofit2
+    implementation appDependencies.retrofit2ConverterGson
+    implementation appDependencies.retrofit2Coroutines
+    implementation appDependencies.googleGson
+    implementation appDependencies.okHttpLogging
+
+    // coroutines
+    implementation appDependencies.kotlinCoroutinesCore
+    implementation appDependencies.kotlinCoroutinesAndroid
+
+    // lottie animation
+    implementation appDependencies.lottie
+
+    implementation appDependencies.swipeRefreshLayout
+
+    implementation appDependencies.timber
+
+    implementation appDependencies.glide
+    annotationProcessor appDependencies.glideCompiler
+
+}

@@ -1,0 +1,80 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+//    id 'dagger.hilt.android.plugin'
+}
+
+android {
+
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdk globalConfiguration.getAt("androidCompileSdkVersion")
+
+    defaultConfig {
+        minSdk globalConfiguration.getAt("androidMinSdkVersion")
+        targetSdk globalConfiguration.getAt("androidTargetSdkVersion")
+
+        testInstrumentationRunner globalConfiguration.getAt("testInstrumentationRunner")
+        consumerProguardFiles globalConfiguration.getAt("consumerRulesPro")
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile(globalConfiguration.getAt("proguardAndroidOptimize")), globalConfiguration.getAt("proguardRulesPro")
+        }
+    }
+    compileOptions {
+        sourceCompatibility globalConfiguration.getAt("javaVersion")
+        targetCompatibility globalConfiguration.getAt("javaVersion")
+    }
+    kotlinOptions {
+        jvmTarget = globalConfiguration.getAt("jvmTarget")
+    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+}
+
+dependencies {
+    def dataDependencies = rootProject.ext.dataDependencies
+    def dataTestDependencies = rootProject.ext.dataTestDependencies
+
+    implementation project(":domain")
+
+    implementation dataDependencies.retrofit2
+    implementation dataDependencies.retrofit2ConverterGson
+    implementation dataDependencies.retrofit2Coroutines
+    implementation dataDependencies.googleGson
+    implementation dataDependencies.okHttp
+    implementation dataDependencies.okHttpLogging
+    implementation dataDependencies.timber
+    implementation dataDependencies.rxKotlin
+    implementation dataDependencies.rxAndroid
+    implementation dataDependencies.annotation
+
+    // Dagger
+    implementation dataDependencies.dagger
+    kapt dataDependencies.daggerCompiler
+
+    //Dagger - Hilt
+//    implementation dataDependencies.daggerHiltAndroid
+//    kapt dataDependencies.hiltAndroidCompiler
+//    kapt dataDependencies.hiltCompiler
+
+    // Test
+    implementation dataTestDependencies.junit
+    implementation dataTestDependencies.mockito
+    implementation dataTestDependencies.mockitoInline
+    implementation dataTestDependencies.assertj
+    implementation dataTestDependencies.robolectric
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingTop="@dimen/dashboard_card_weather_detail_padding_top"
+    android:paddingBottom="@dimen/dashboard_card_weather_detail_padding_bottom"
+    tools:background="@drawable/bg_weather_detail_list">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="@dimen/dashboard_card_weather_detail_margin_horizontal"
+        android:layout_marginVertical="@dimen/dashboard_card_weather_detail_margin_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_weather_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:scaleType="fitCenter"
+            tools:src="@drawable/ic_sunrise"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_weather_detail_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:textSize="@dimen/text_size_18sp"
+            android:textColor="@color/dashboard_weather_detail_value"
+            android:textStyle="normal"
+            android:layout_marginStart="@dimen/dashboard_country_margin_left"
+            android:layout_marginEnd="@dimen/dashboard_country_margin_right"
+            tools:text="@string/sunrise"
+            tools:textColor="@color/dashboard_weather_detail_value"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_weather_detail_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:text="@string/wind"
+            android:gravity="end"
+            android:textSize="@dimen/text_size_18sp"
+            android:textColor="@color/dashboard_weather_detail_value"
+            android:textStyle="normal"
+            android:layout_marginStart="@dimen/dashboard_country_margin_left"
+            android:layout_marginEnd="@dimen/dashboard_country_margin_right"
+            tools:text="17:00"
+            tools:textColor="@color/dashboard_weather_detail_value"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

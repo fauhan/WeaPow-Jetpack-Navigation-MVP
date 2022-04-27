@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="card_view_corner_radius">10dp</dimen>
+
+    <dimen name="padding_left_10dp">10dp</dimen>
+    <dimen name="padding_right_10dp">10dp</dimen>
+    <dimen name="padding_top_10dp">10dp</dimen>
+    <dimen name="padding_bottom_10dp">10dp</dimen>
+
+    <dimen name="dashboard_title_text_size">18sp</dimen>
+    <dimen name="dashboard_title_margin_left">10dp</dimen>
+    <dimen name="dashboard_title_margin_right">10dp</dimen>
+    <dimen name="dashboard_title_margin_top">10dp</dimen>
+
+    <dimen name="dashboard_country_text_size">20sp</dimen>
+    <dimen name="dashboard_country_margin_left">10dp</dimen>
+    <dimen name="dashboard_country_margin_right">10dp</dimen>
+    <dimen name="dashboard_country_margin_bottom">10dp</dimen>
+
+    <dimen name="dashboard_icon_user_margin_right">10dp</dimen>
+
+    <dimen name="dashboard_weather_information_margin_top">10dp</dimen>
+
+    <dimen name="dashboard_card_weather_detail_margin_left">10dp</dimen>
+    <dimen name="dashboard_card_weather_detail_margin_right">10dp</dimen>
+    <dimen name="dashboard_card_weather_detail_margin_top">20dp</dimen>
+    <dimen name="dashboard_card_weather_detail_margin_horizontal">10dp</dimen>
+    <dimen name="dashboard_card_weather_detail_margin_vertical">5dp</dimen>
+    <dimen name="dashboard_card_weather_detail_padding_top">5dp</dimen>
+    <dimen name="dashboard_card_weather_detail_padding_bottom">5dp</dimen>
+    <dimen name="dashboard_card_weather_detail_padding_horizontal">10dp</dimen>
+    <dimen name="dashboard_card_weather_detail_padding_vertical">10dp</dimen>
+
+
+    <dimen name="selected_city_card_margin_top">10dp</dimen>
+    <dimen name="selected_city_card_margin_left">10dp</dimen>
+    <dimen name="selected_city_card_margin_right">10dp</dimen>
+
+    <dimen name="line_separator_margin_top">10dp</dimen>
+    <dimen name="line_separator_margin_bottom">10dp</dimen>
+
+    <dimen name="text_size_18sp">18sp</dimen>
+    <dimen name="text_size_20sp">20sp</dimen>
+    <dimen name="text_size_24sp">24sp</dimen>
+</resources>

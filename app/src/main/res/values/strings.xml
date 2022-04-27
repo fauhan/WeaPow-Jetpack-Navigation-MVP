@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">WeaPow</string>
+    <string name="splash_text">Weather Pow</string>
+    <string name="wind">Wind</string>
+    <string name="temp">Temp</string>
+    <string name="humidity">Humidity</string>
+
+    <string name="value_temperature">%1$s ℃</string>
+    <string name="value_current_date">Today, %1$s</string>
+    <string name="pressure">Pressure</string>
+    <string name="sunrise">Sunrise</string>
+    <string name="sunset">Sunset</string>
+    <string name="temp_min">Temp Min</string>
+    <string name="temp_max">Temp Max</string>
+    <string name="temp_feels_like">Temp Feels Like</string>
+    <string name="city">City</string>
+    <string name="selected_city">Selected City</string>
+</resources>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/bg_city_card.xml" value="0.1645" />
+        <entry key="app/src/main/res/drawable/bg_selected_city_card.xml" value="0.1645" />
+        <entry key="app/src/main/res/drawable/bg_weather_detail_list.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/custom_bordered_ripple.xml" value="0.211" />
+        <entry key="app/src/main/res/drawable/ic_broken_cloud_04d_04n.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_cloudy_day_3.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_connection_failed.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_few_clouds_02d.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_few_clouds_02n.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_humidity.xml" value="0.1645" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.211" />
+        <entry key="app/src/main/res/drawable/ic_moon_01n.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_rain_10n.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_scattered_cloud_03d.xml" value="0.1645" />
+        <entry key="app/src/main/res/drawable/ic_sun_01d.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_sunrise.xml" value="0.1645" />
+        <entry key="app/src/main/res/drawable/ic_sunset.xml" value="0.1645" />
+        <entry key="app/src/main/res/drawable/ic_temperature_feels_like.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_temperature_max.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_temperature_min.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_thunderstorm_11d.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_uv_index.xml" value="0.1645" />
+        <entry key="app/src/main/res/drawable/ic_uv_index_alt_svgrepo_com.xml" value="0.1645" />
+        <entry key="app/src/main/res/drawable/ic_weather_pressure.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_wind.xml" value="0.1645" />
+        <entry key="app/src/main/res/layout/activity_change_city.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.15989583333333332" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_search_city.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.2006340579710145" />
+        <entry key="app/src/main/res/layout/fragment_selected_city.xml" value="0.140625" />
+        <entry key="app/src/main/res/layout/item_city_card.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/layout/item_weather_detail.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.211" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.211" />
+        <entry key="app/src/main/res/xml/network_security_config.xml" value="0.2006340579710145" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.140625" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:theme="@style/Theme.WeaPow"
+    tools:context=".dashboard.DashboardFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llc_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCurrentDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dashboard_title_text_size"
+                android:textColor="@color/dashboard_title_text"
+                android:layout_marginStart="@dimen/dashboard_title_margin_left"
+                android:layout_marginEnd="@dimen/dashboard_title_margin_right"
+                android:layout_marginTop="@dimen/dashboard_title_margin_top"
+                tools:text="Today, 13 April 2022"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llc_search_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/custom_bordered_ripple"
+                android:clickable="true"
+                android:focusable="true"
+                android:foregroundGravity="bottom"
+                android:layout_marginStart="@dimen/dashboard_title_margin_left">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    app:srcCompat="@drawable/ic_baseline_search_24"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCurrentCountry"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:textSize="@dimen/dashboard_country_text_size"
+                    android:textColor="@color/dashboard_country_text"
+                    android:textStyle="bold"
+                    android:layout_marginStart="@dimen/dashboard_title_margin_left"
+                    android:layout_marginEnd="@dimen/dashboard_country_margin_right"
+                    tools:text="Jakarta"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:src="@drawable/ic_user"
+            android:scaleType="fitCenter"
+            android:layout_marginEnd="@dimen/dashboard_icon_user_margin_right"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="100dp"
+        android:maxHeight="100dp"
+        app:layout_constraintDimensionRatio="h,16:9"
+        android:scaleType="fitCenter"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llc_top_bar"
+        app:layout_constraintBottom_toTopOf="@id/llc_weather_information" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llc_weather_information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/dashboard_weather_information_margin_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/animation_view_weather">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wind"
+                android:textSize="@dimen/text_size_18sp"
+                android:textColor="@color/dashboard_weather_info_label"
+                android:textStyle="normal"
+                android:layout_marginStart="@dimen/dashboard_country_margin_left"
+                android:layout_marginEnd="@dimen/dashboard_country_margin_right"
+                tools:text="Wind"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWindValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dashboard_country_text_size"
+                android:textColor="@color/dashboard_country_text"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/dashboard_country_margin_left"
+                android:layout_marginEnd="@dimen/dashboard_country_margin_right"
+                tools:text="234"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/line_separator" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/temp"
+                android:textSize="@dimen/text_size_18sp"
+                android:textColor="@color/dashboard_weather_info_label"
+                android:textStyle="normal"
+                android:layout_marginStart="@dimen/dashboard_country_margin_left"
+                android:layout_marginEnd="@dimen/dashboard_country_margin_right"
+                tools:text="Temp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTemperatureValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dashboard_country_text_size"
+                android:textColor="@color/dashboard_country_text"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/dashboard_country_margin_left"
+                android:layout_marginEnd="@dimen/dashboard_country_margin_right"
+                tools:text="30C"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/line_separator" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/humidity"
+                android:textSize="@dimen/text_size_18sp"
+                android:textColor="@color/dashboard_weather_info_label"
+                android:textStyle="normal"
+                android:layout_marginStart="@dimen/dashboard_country_margin_left"
+                android:layout_marginEnd="@dimen/dashboard_country_margin_right"
+                tools:text="Humidity"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHumidityValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dashboard_country_text_size"
+                android:textColor="@color/dashboard_country_text"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/dashboard_country_margin_left"
+                android:layout_marginEnd="@dimen/dashboard_country_margin_right"
+                tools:text="25%"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/item_weather_detail"
+        tools:itemCount="2"
+        android:background="@drawable/bg_weather_detail_list"
+        android:layout_marginStart="@dimen/dashboard_card_weather_detail_margin_left"
+        android:layout_marginEnd="@dimen/dashboard_card_weather_detail_margin_right"
+        android:layout_marginTop="@dimen/dashboard_card_weather_detail_margin_top"
+        android:paddingHorizontal="@dimen/dashboard_card_weather_detail_padding_horizontal"
+        android:overScrollMode="never"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llc_weather_information" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_connection_failed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:srcCompat="@drawable/ic_connection_failed"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
