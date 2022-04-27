@@ -1,5 +1,5 @@
 # Weapow - Weather Pow
-Simple Weather Android application using MVP and Clean Architecture
+Simple Weather Android application using Jetpack Navigation, MVP and Clean Architecture
 
 Open API: 
 1. https://openweathermap.org/api
